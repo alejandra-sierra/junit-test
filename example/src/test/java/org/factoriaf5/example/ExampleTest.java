@@ -29,7 +29,7 @@ public class ExampleTest {
     }
 
 //1
-@Test
+    @Test
     public void testSumar (){
     //Given
     int num1=35;
@@ -41,7 +41,7 @@ public class ExampleTest {
     }
 
 //2
-@Test
+    @Test
     public void testCheckPositivo(){
         int number= 4;
         boolean result =example.checkPositivo(number);
@@ -49,7 +49,7 @@ public class ExampleTest {
     }
 
 //3
-@Test
+    @Test
     public void testContarLetrasA(){
 
         assertEquals(3, example.contarLetrasA("macarena"));
@@ -57,7 +57,7 @@ public class ExampleTest {
     }
 
 //4
-@Test
+    @Test
     public void testContieneElempento(){
         List <String> animales = Arrays.asList("perro" , "gato" , "raton");
         assertTrue(example.contieneElemento(animales, "perro"));
@@ -65,23 +65,37 @@ public class ExampleTest {
     }
 
 //5
-@Test
+    @Test
     public void testRevertirCadena(){
-        List <String> principal = Arrays.asList("perro" , "gato" , "raton");
-        List <String> inversa = Arrays.asList("raton" , "gato" , "perro");
-        assertEquals(inversa, principal);
+        String principal = "abcd";
+        String inversa = "dcba";
+        assertEquals(inversa, example.revertirCadena(principal));
     }
 
 //6
-@Test
+    @Test
     public void testFactorial(){
         assertEquals(120, example.factorial(5));
-        assertThrows(IllegalArgumentException("Factorial no definido para números negativos"),example.factorial(-1));
+        int negativo = (-1)
+        assertThrows(IllegalArgumentException("Factorial no definido para números negativos",example.factorial(negativo));
 
     }
 
 //7
-@Test
-    public void 
+    @Test
+    public void testEsPrimo(){
+        assertTrue(example.esPrimo(3));
+        assertTrue(example.esPrimo(7));
+        assertFalse(example.esPrimo(8));
+        assertFalse(example.esPrimo(10));
+    }
+
+//8
+    @Test
+    public void testMensajeConRetraso (){
+        int tiempo=5000;
+        assertTrue(example.mensajeConRetraso>tiempo);
+        
+    }
 }
 
