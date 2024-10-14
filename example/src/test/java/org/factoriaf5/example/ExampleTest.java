@@ -76,9 +76,8 @@ public class ExampleTest {
     @Test
     public void testFactorial(){
         assertEquals(120, example.factorial(5));
-        int negativo = (-1)
-        assertThrows(IllegalArgumentException("Factorial no definido para números negativos",example.factorial(negativo));
-
+        int negativo = -1;
+        assertThrows(IllegalArgumentException.class, ()-> example.factorial(negativo));
     }
 
 //7
@@ -94,14 +93,14 @@ public class ExampleTest {
     @Test
     public void testMensajeConRetraso (){
         int tiempo=5000;
-        assertTrue(example.mensajeConRetraso>tiempo);
+        assertTrue(example.mensajeConRetraso()>tiempo);
     }
 
 //9
     @Test
     public void testConvertirAString(){
-        List<Integer> lista = Array.asList(1,2,3,4);
-        List<String> cambio = Array.asList("1","2","3","4");
+        List<Integer> lista = Arrays.asList(1, 2, 3, 4);
+        List<String> cambio = Arrays.asList("1", "2", "3", "4");
         assertEquals(cambio, example.convertirAString(lista));
     }
 
