@@ -97,6 +97,13 @@ public class ExampleTest {
         assertTrue(example.mensajeConRetraso>tiempo);
     }
 
+//9
+    @Test
+    public void testConvertirAString(){
+        List<Integer> lista = Array.asList(1,2,3,4);
+        List<String> cambio = Array.asList("1","2","3","4");
+        assertEquals(cambio, example.convertirAString(lista));
+    }
 
 }
 
