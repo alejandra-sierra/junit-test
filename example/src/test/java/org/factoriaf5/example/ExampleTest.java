@@ -10,8 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -67,8 +66,8 @@ public class ExampleTest {
 //5
     @Test
     public void testRevertirCadena(){
-        String principal = "abcd";
-        String inversa = "dcba";
+        String [] principal = {"a","b","c","d"};
+        String[] inversa = {"d","c","b","a"};
         assertEquals(inversa, example.revertirCadena(principal));
     }
 
