@@ -66,9 +66,8 @@ public class ExampleTest {
 //5
     @Test
     public void testRevertirCadena(){
-        String [] principal = {"a","b","c","d"};
         String[] inversa = {"d","c","b","a"};
-        assertEquals(inversa, example.revertirCadena(principal));
+        assertEquals(expected.revertirCadena("a","b","c","d"),example.testRevertirCadena(inversa));
     }
 
 //6
@@ -94,7 +93,7 @@ public class ExampleTest {
         int tiempo=5000;
         assertTrue(example.mensajeConRetraso()>tiempo);
     }
-
+    
 //9
     @Test
     public void testConvertirAString(){
@@ -102,6 +101,5 @@ public class ExampleTest {
         List<String> cambio = Arrays.asList("1", "2", "3", "4");
         assertEquals(cambio, example.convertirAString(lista));
     }
-
 }
 
