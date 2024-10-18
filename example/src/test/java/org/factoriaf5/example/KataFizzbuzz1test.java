@@ -2,36 +2,40 @@ package org.factoriaf5.example;
 
 import static org.junit.Assert.*;
 
-import java.util.Scanner;
-
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
+
 public class KataFizzbuzz1test {
-
-    rivate Example example;
-
-    //por cada test que haga estancia el new example init=inicializacion
+    
     @BeforeEach
     public void init(){
         this.example = new Example();
     }
 
     @Test
-    public void() testFizz{
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Escribe un numero");
-        int i=scanner.nextInt();
-  
-        assertEquals("fizz", );
-
-        
-
+    public void testFizzBuzz() {
+        assertEquals("FizzBuzz", fizzBuzz(15));
+        assertEquals("Buzz", fizzBuzz(10));
+        assertEquals("Fizz", fizzBuzz(9));
+        assertEquals("4", fizzBuzz(4));
+        assertEquals("FizzBuzz", fizzBuzz(30));
+        assertEquals("Fizz", fizzBuzz(6));
+        assertEquals("Buzz", fizzBuzz(25));
+        assertEquals("1", fizzBuzz(1));
     }
 
-    @Test
-    public void testBuzz{
-
+    private String fizzBuzz(int i) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            return "FizzBuzz";
+        } else if (i % 5 == 0) {
+            return "Buzz";
+        } else if (i % 3 == 0) {
+            return "Fizz";
+        } else {
+            return String.valueOf(i);
+        }
     }
+}
+
 }
