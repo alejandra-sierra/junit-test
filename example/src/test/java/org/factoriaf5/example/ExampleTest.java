@@ -1,19 +1,12 @@
 package org.factoriaf5.example;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -47,6 +40,14 @@ public class ExampleTest {
         assertTrue(result);
     }
 
+    @Test
+    public void testCheckPositivoError(){
+        int number=-4;
+        assertThrows(IllegalArgumentException.class,()->{
+            example.checkPositivo(number);
+        });
+    }
+
 //3
     @Test
     public void testContarLetrasA(){
@@ -55,27 +56,62 @@ public class ExampleTest {
         assertEquals(0, example.contarLetrasA("pez"));
     }
 
+    @Test
+    public void testContarLetrasASinA(){
+        String cadena ="kcghnmioltsh";
+        int result = this.example.contarLetrasA(cadena);
+        assertEquals(0,result);
+    }
+
+    @Test
+    public void testContarLetrasAEmpty(){
+        String cadena = "";
+        int result = this.example.contarLetrasA(cadena);
+        assertEquals(0,result);
+    }
+
+
+
 //4
     @Test
     public void testContieneElempento(){
         List <String> animales = Arrays.asList("perro" , "gato" , "raton");
-        assertTrue(example.contieneElemento(animales, "perro"));
-        assertFalse(example.contieneElemento(animales,"zorro"));
+        String animal = "perro";
+        boolean result = this.example.contieneElemento(animales, animal);
+        assertTrue(result);
+
+    }
+
+    @Test
+    public void testContieneElementoNoExiste(){
+        List <String> animales = Arrays.asList("perro" , "gato" , "raton");
+        String animal = "serpiente";
+        boolean result = this.example.contieneElemento(animales, animal);
+        assertFalse(result);
     }
 
 //5
     @Test
     public void testRevertirCadena(){
-        String[] inversa = {"d","c","b","a"};
-        assertEquals(expected.revertirCadena("a","b","c","d"),example.testRevertirCadena(inversa));
+        String cadena = ("mar");
+        String result = this.example.revertirCadena(cadena);
+        assertEquals("ram",result);
     }
 
 //6
     @Test
     public void testFactorial(){
-        assertEquals(120, example.factorial(5));
-        int negativo = -1;
-        assertThrows(IllegalArgumentException.class, ()-> example.factorial(negativo));
+        int number = 6;
+        long result = this.example.factorial(number);
+        assertEquals(720,result);
+    }
+
+    @Test
+    public void testFactorialError(){
+        int number = -6;
+        assertThrows(IllegalArgumentException.class, () -> {
+            this.example.factorial(number);
+        });
     }
 
 //7
@@ -89,9 +125,18 @@ public class ExampleTest {
 
 //8
     @Test
-    public void testMensajeConRetraso (){
-        int tiempo=5000;
-        assertTrue(example.mensajeConRetraso()>tiempo);
+    public void testMensajeConRetraso () throws InterruptedException{
+        String result = this.example.mensajeConRetraso();
+        assertEquals("Listo después de retraso",result);
+    }
+
+    @Test
+    public void testMensajeConRetrasoInterrumpido(){
+        Thread.currentThread().interrupt();
+        assertThrows(InterruptedException.class, () -> {
+            this.example.mensajeConRetraso();
+        });
+        Thread.interrupted();
     }
     
 //9

@@ -7,11 +7,9 @@ public class Multiplicar {
         String [] tabla = new String[10];
         
         for (int multiplicador=1; multiplicador <= 10; multiplicador++){
-            tabla[multiplicador-1]= num + " x " + multiplicador +" = "+(num*multiplicador);
+            tabla [multiplicador-1]= num + " x " + multiplicador +" = "+(num*multiplicador);
         }
         return tabla;
     }
-    
-
 }
 

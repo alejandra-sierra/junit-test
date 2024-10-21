@@ -1,4 +1,5 @@
-import static org.junit.jupiter.api.Assertions.*;
+package org.factoriaf5.example;
+
 import org.junit.jupiter.api.Test;
 
 public class MultiplicarTest {
@@ -8,6 +9,7 @@ public class MultiplicarTest {
 
 
         Multiplicar multiplicar = new Multiplicar();
+        int multiplicador = 2;
 
         String[] valorEsperado = {
             "2 x 1 = 2",
