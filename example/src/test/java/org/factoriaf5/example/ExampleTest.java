@@ -1,6 +1,7 @@
 package org.factoriaf5.example;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.TestComponent;
 
 public class ExampleTest {
 
@@ -88,14 +90,23 @@ public class ExampleTest {
         String animal = "serpiente";
         boolean result = this.example.contieneElemento(animales, animal);
         assertFalse(result);
+    
+    }
+
+    @Test
+    public void testContieneElementoListaVacia(){
+        List <String> animales = Collections.emptyList();
+        String animal = "perro";
+        boolean result = this.example.contieneElemento(animales, animal);
+        assertFalse(result);
     }
 
 //5
     @Test
     public void testRevertirCadena(){
-        String cadena = ("mar");
-        String result = this.example.revertirCadena(cadena);
-        assertEquals("ram",result);
+        String cadena = ("coche");
+        String result = revertirCadena(cadena);
+        assertEquals("ehcoc",result);
     }
 
 //6
