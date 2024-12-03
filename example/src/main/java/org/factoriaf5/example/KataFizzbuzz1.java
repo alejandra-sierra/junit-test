@@ -20,5 +20,6 @@ public class KataFizzbuzz1 {
                 System.out.println("Fizz");
             }
             else {System.out.println(i);}
-    }
+        }
+
 }
